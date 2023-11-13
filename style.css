@@ -1,10 +1,14 @@
 .form-container {
     width: 320px;
+    border: solid;
+    border-color: #212122;
     border-radius: 0.75rem;
-    background-color: rgba(17, 24, 39, 1);
+    background-color: rgb(230, 230, 231);
     padding: 2rem;
-    color: rgba(243, 244, 246, 1);
+    color: rgb(21, 21, 21, 1);
   }
+
+  /*rgba(17, 24, 39, 1) rgba(167, 139, 250, 1)*/
   
   .title {
     text-align: center;
@@ -25,16 +29,16 @@
   
   .input-group label {
     display: block;
-    color: rgba(156, 163, 175, 1);
+    color: #212122;
     margin-bottom: 4px;
   }
   
   .input-group input {
     width: 100%;
     border-radius: 0.375rem;
-    border: 1px solid rgba(55, 65, 81, 1);
+    border: 1px solid rgb(21, 21, 21);
     outline: 0;
-    background-color: rgba(17, 24, 39, 1);
+    background-color: rgb(182, 182, 182);
     padding: 0.75rem 1rem;
     color: rgba(243, 244, 246, 1);
   }
@@ -53,7 +57,7 @@
   }
   
   .forgot a,.signup a {
-    color: rgba(243, 244, 246, 1);
+    color: rgba(21, 21, 21, 1);
     text-decoration: none;
     font-size: 14px;
   }
@@ -91,12 +95,13 @@
     padding-right: 0.75rem;
     font-size: 0.875rem;
     line-height: 1.25rem;
-    color: rgba(156, 163, 175, 1);
+    color: rgba(21, 21, 21, 1);
   }
   
   .social-icons {
     display: flex;
     justify-content: center;
+    filter: invert(100%);
   }
   
   .social-icons .icon {
@@ -117,18 +122,11 @@
     text-align: center;
     font-size: 0.75rem;
     line-height: 1rem;
-    color: rgba(156, 163, 175, 1);
+    color: rgb(33, 34, 35);
   }
   
 
 .form-container{
     width: 30%;
-    margin: 100px auto;
-}
-
-body{
-    border-style: solid;
-    border-color: green;
-    background-color: rgba(17, 24, 39, 1);
-
+    margin: 100px 150px;
 }
