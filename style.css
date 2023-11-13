@@ -125,3 +125,10 @@
     width: 30%;
     margin: 100px auto;
 }
+
+body{
+    border-style: solid;
+    border-color: green;
+    background-color: rgba(17, 24, 39, 1);
+
+}
