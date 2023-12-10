@@ -149,6 +149,29 @@
 /* Mobile devices */
 @media only screen and (min-width: 320px) and (max-width: 480px) {
   /* CSS rules for mobile devices */
+  .container{
+    display: block;
+    padding: 0;
+  }
+
+  .form-container {
+    width: 95%;
+    border: solid;
+    border-color: #212122;
+    border-radius: 0.75rem;
+    background-color: rgb(230, 230, 231);
+    padding: 2rem;
+    color: rgb(21, 21, 21, 1);
+    margin: 5px;
+    height: 100%;
+  }
+
+  .second-text{
+    font-size: 22px;
+    width: 100%;
+    margin: 60px auto 40px;
+  }
+
 }
 
 /* iPads, Tablets */
