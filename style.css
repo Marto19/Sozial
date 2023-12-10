@@ -144,3 +144,29 @@
   margin: 150px auto;
 
 }
+
+
+/* Mobile devices */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  /* CSS rules for mobile devices */
+}
+
+/* iPads, Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* CSS rules for iPads, Tablets */
+}
+
+/* Small screens, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  /* CSS rules for small screens, laptops */
+}
+
+/* Desktops, large screens */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* CSS rules for desktops, large screens */
+}
+
+/* Extra large screens, TV */
+@media only screen and (min-width: 1201px) {
+  /* CSS rules for extra large screens, TV */
+}
