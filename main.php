@@ -10,7 +10,7 @@
   // Check if the submitted username and password are correct
   if ($submitted_username == $correct_username && $submitted_password == $correct_password) {
       // Redirect to a success page
-      header("Location: http://index.html/greet");
+      header("Location: landing.html");
       exit();
   } else{
     echo "Incorrect password. Please try again.";
