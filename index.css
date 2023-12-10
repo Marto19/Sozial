@@ -162,7 +162,7 @@
     background-color: rgb(230, 230, 231);
     padding: 2rem;
     color: rgb(21, 21, 21, 1);
-    margin: 5px;
+    margin: 10px;
     height: 100%;
   }
 
@@ -179,8 +179,6 @@
   /* CSS rules for iPads, Tablets */
   .container{
     display: block;
-    padding-left: 500px;
-
   }
 
   .form-container {
@@ -193,26 +191,75 @@
     color: rgb(21, 21, 21, 1);
     margin: 5px;
     height: 100%;
+    margin-left: 50px;
   }
 
   .second-text{
     font-size: 22px;
     width: 100%;
     margin: 60px auto 40px;
+    margin-right: 50px;
   }
 }
 
 /* Small screens, laptops */
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
   /* CSS rules for small screens, laptops */
+  .container{
+    margin: 100px;
+  }
+
+  .form-container {
+    width: 80%;
+    border: solid;
+    border-color: #212122;
+    border-radius: 0.75rem;
+    background-color: rgb(230, 230, 231);
+    padding: 2rem;
+    color: rgb(21, 21, 21, 1);
+    margin: 5px;
+    height: 100%;
+    margin-left: 50px;
+  }
+
+  .second-text{
+    font-size: 35px;
+    width: 100%;
+  }
+
 }
 
 /* Desktops, large screens */
 @media only screen and (min-width: 1025px) and (max-width: 1200px) {
   /* CSS rules for desktops, large screens */
+  .container{
+    margin: 50px;
+  }
+
+  .form-container {
+    width: 80%;
+    border: solid;
+    border-color: #212122;
+    border-radius: 0.75rem;
+    background-color: rgb(230, 230, 231);
+    padding: 2rem;
+    color: rgb(21, 21, 21, 1);
+    margin: 5px;
+    height: 100%;
+    margin-left: 50px;
+  }
+
+  .second-text{
+    font-size: 43px;
+    width: 100%;
+  }
 }
 
 /* Extra large screens, TV */
 @media only screen and (min-width: 1201px) {
   /* CSS rules for extra large screens, TV */
+  .container{
+    margin-top: 10vh;
+  }
+
 }
