@@ -1,37 +1,43 @@
 <?php
-    session_start();
+session_start();
 
-    include("connection.php");
-    include("functions.php");
+include("connection.php");
+include("functions.php");
 
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        // something was posted
-        $user_name = $_POST['user_name'];
-        $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    // something was posted
+    $user_name = $_POST['user_name'];
+    $password = $_POST['password'];
 
-        if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
-            // read to database
-            $query = "SELECT * FROM users WHERE user_name = '$user_name' limit 1";    //we check if the user name is in the database
+    if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
+        // read from database
+        $query = "SELECT * FROM users WHERE user_name = '$user_name' LIMIT 1";
 
-            $result = mysqli_query($con, $query); // Added $conn as the first argument
+        $result = mysqli_query($con, $query);
 
-            if($result){
-                if($result && mysqli_num_rows($result) > 0){    //if the result exists and the number of rows is greater than 0, basically we check if its real
-                    $user_data = mysqli_fetch_assoc($result);   //we use associative array and store user data
-                    if($user_data['password'] == $password)
-                    {
-                        $_SESSION['user_id'] = $user_data['user_id'];
-                        header("Location: index.php");
-                        die;
-                    }
+        if ($result) {
+            if (mysqli_num_rows($result) > 0) {
+                $user_data = mysqli_fetch_assoc($result);
+                // Assuming passwords are stored in plaintext (for demonstration purposes)
+                if ($user_data['password'] == $password) {
+                    $_SESSION['user_id'] = $user_data['user_id'];
+                    echo '<script>window.location.href = "index.php";</script>';
+                    die;
+                } else {
+                    echo "Wrong username or password!";
                 }
+            } else {
+                echo "Wrong username or password!";
             }
-            echo "Wrong username or password!";
         } else {
-            echo "Wrong username or password!";
+            echo "Error: " . mysqli_error($con);
         }
+    } else {
+        echo "Wrong username or password!";
     }
+}
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
