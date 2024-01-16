@@ -20,7 +20,8 @@
             } else {
                 // save to database
                 $user_id = random_num(20);
-                $query = "INSERT INTO users (user_id, user_name, password) VALUES ('$user_id', '$user_name', '$password')";
+                $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+                $query = "INSERT INTO users (user_id, user_name, password) VALUES ('$user_id', '$user_name', '$hashed_password')";
 
                 mysqli_query($con, $query);
 
@@ -32,8 +33,6 @@
         }
     }
 ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

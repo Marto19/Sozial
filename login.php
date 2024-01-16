@@ -18,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         if ($result) {
             if (mysqli_num_rows($result) > 0) {
                 $user_data = mysqli_fetch_assoc($result);
-                // Assuming passwords are stored in plaintext (for demonstration purposes)
-                if ($user_data['password'] == $password) {
+                // Check the hashed password
+                if (password_verify($password, $user_data['password'])) {
                     $_SESSION['user_id'] = $user_data['user_id'];
                     echo '<script>window.location.href = "index.php";</script>';
                     die;
@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     }
 }
 ?>
+
 
 
 <!DOCTYPE html>
