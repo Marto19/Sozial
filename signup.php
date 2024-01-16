@@ -10,19 +10,29 @@
         $password = $_POST['password'];
 
         if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
-            // save to database
-            $user_id = random_num(20);
-            $query = "INSERT INTO users (user_id, user_name, password) VALUES ('$user_id', '$user_name', '$password')";
 
-            mysqli_query($con, $query); // Added $conn as the first argument
+            // check if user already exists
+            $query = "SELECT * FROM users WHERE user_name = '$user_name'";
+            $result = mysqli_query($con, $query);
 
-            header("Location: login.php");
-            die;
+            if(mysqli_num_rows($result) > 0) {
+                echo "User with this username already exists!";
+            } else {
+                // save to database
+                $user_id = random_num(20);
+                $query = "INSERT INTO users (user_id, user_name, password) VALUES ('$user_id', '$user_name', '$password')";
+
+                mysqli_query($con, $query);
+
+                header("Location: login.php");
+                die;
+            }
         } else {
             echo "Please enter valid information!";
         }
     }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
