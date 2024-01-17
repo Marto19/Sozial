@@ -10,10 +10,10 @@ include("functions.php");
 // Check if the user is logged in
 $user_data = check_login($con);
 
-// Debugging: Print user data to check if the user is logged in
-echo '<pre>';
-print_r($user_data);
-echo '</pre>';
+// // Debugging: Print user data to check if the user is logged in
+// echo '<pre>';
+// print_r($user_data);
+// echo '</pre>';
 
 if (!$con) {
     die("Connection failed: " . mysqli_connect_error());
@@ -69,9 +69,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         // User has already liked the post, handle accordingly (e.g., show a message)
-        echo "You have already liked this post.";
+        // echo "You have already liked this post.";
+        
+        header('Location: index.php');
+
+        echo '<script>alert("You already like that post");</script>';
     }
 }
 
-var_dump($_SESSION);
+// var_dump($_SESSION);
 ?>
+
+//TODO: when pressing like again over and over - like-unlike
