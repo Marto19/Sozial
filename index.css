@@ -19,6 +19,7 @@
       #e5e5f7 30px
     ),
     repeating-linear-gradient(#ffb5b58a, rgba(167, 139, 250)); */
+   
 }
 
 .form-container {
@@ -157,7 +158,7 @@
 .second-text{
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bolder;
-  font-size: 60px;
+  font-size: 50px;
   width: 508px;
   text-align: center;
   margin: 150px auto;
@@ -279,6 +280,11 @@
   /* CSS rules for extra large screens, TV */
   .container{
     margin-top: 10vh;
+  }
+
+  .second-text{
+    font-size: 55px;
+    width: 60%;
   }
 
 }

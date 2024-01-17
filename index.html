@@ -17,10 +17,10 @@
     <div class="second-text">Connect, Share, Thrive: Where Every Story Finds its Community!</div>
     <div class="form-container" action="index.php" method="post">
       <p class="title">Login</p>
-      <form class="form" method="post" action="main.php">
+      <form class="form" method="post" action="main.php"> <!-- Updated action attribute -->
         <div class="input-group">
-          <label for="username">Username</label>
-          <input type="text" name="email" id="username" placeholder="" required>
+          <label for="user_name">Username</label> <!-- Updated input name to match PHP -->
+          <input type="text" name="user_name" id="user_name" placeholder="" required>
         </div>
         <div class="input-group">
           <label for="password">Password</label>
@@ -29,7 +29,7 @@
             <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
           </div>
         </div>
-        <button class="sign" type="submit">Sign in</button>
+        <button class="sign" type="submit" name="Login">Sign in</button> <!-- Updated button name -->
       </form>
       <div class="social-message">
         <div class="line"></div>
