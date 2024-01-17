@@ -12,7 +12,7 @@ $user_data = check_login($con);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Your Social Media Site</title>
+    <title>PostJunkyard</title>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
@@ -40,7 +40,7 @@ $user_data = check_login($con);
 
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">PostJunkyard</a>
+    <a class="navbar-brand" href="index.php">PostJunkyard</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
             aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,10 +49,10 @@ $user_data = check_login($con);
         <ul class="navbar-nav ml-auto">
             <!-- Add any additional navigation links here -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Profile</a>
+                <a class="nav-link" href="profile.php">Profile</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="submit_post.php">Post</a>
@@ -69,7 +69,7 @@ $user_data = check_login($con);
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Shitpost freely, this is for us...</h2>
+            <h2 class="section-heading text-uppercase">         </h2>
         </div>
     </div>
 
