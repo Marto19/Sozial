@@ -13,6 +13,7 @@ $user_data = check_login($con);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Your Social Media Site</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
     /* Add your custom styles here */
@@ -68,7 +69,7 @@ $user_data = check_login($con);
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Welcome to Your Social Media</h2>
+            <h2 class="section-heading text-uppercase">Shitpost freely, this is for us...</h2>
         </div>
     </div>
 
@@ -85,16 +86,22 @@ $user_data = check_login($con);
 
         // Display posts
         while ($row = mysqli_fetch_assoc($result)) {
-            echo '<div class="post">';
-            echo '<h4>' . $row['user_name'] . '</h4>';
-            echo '<p>' . $row['caption'] . '</p>';
-            // Display the image if available
-            if (!empty($row['image_path'])) {
-                echo '<img src="' . $row['image_path'] . '" class="img-fluid" alt="Post Image">';
-            }
-            echo '<p class="text-muted">' . $row['created_at'] . '</p>';
-            echo '</div>';
-        }
+          echo '<div class="post">';
+          echo '<h4>' . $row['user_name'] . '</h4>';
+          echo '<p>' . $row['caption'] . '</p>';
+          // Display the image if available
+          if (!empty($row['image_path'])) {
+              echo '<img src="' . $row['image_path'] . '" class="img-fluid" alt="Post Image">';
+          }
+          echo '<p class="text-muted">' . $row['created_at'] . '</p>';
+          echo '<p>Likes: ' . $row['likes_count'] . '</p>'; // Display the like count
+          // Add a form for liking a post
+          echo '<form method="post" action="like_post.php">';
+          echo '<input type="hidden" name="post_id" value="' . $row['id'] . '">';
+          echo '<button type="submit" class="btn btn-primary">Like</button>';
+          echo '</form>';
+          echo '</div>';
+      }
         ?>
     </div>
 </div>
