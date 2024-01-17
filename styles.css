@@ -1,0 +1,42 @@
+/* Add your custom styles here */
+.container {
+    max-width: 600px;
+}
+
+
+body {
+    padding-top: 56px;
+}
+
+.post {
+    margin-bottom: 20px;
+    padding: 20px; /* Add padding to increase the size of the post */
+    border: 1px solid #ccc; /* Add a border for a neat appearance */
+    border-radius: 10px; /* Add border-radius for rounded corners */
+    text-align: center; /* Center the content */
+}
+
+.post img {
+    max-width: 100%; /* Make sure images don't overflow the post container */
+    border-radius: 5px; /* Optional: Add border-radius for rounded image corners */
+}
+
+<style>
+    /* Add your custom styles here */
+    body {
+        padding-top: 56px;
+    }
+
+    .post {
+        margin-bottom: 20px;
+        padding: 20px; /* Add padding to increase the size of the post */
+        border: 1px solid #ccc; /* Add a border for a neat appearance */
+        border-radius: 10px; /* Add border-radius for rounded corners */
+        text-align: center; /* Center the content */
+    }
+
+    .post img {
+        max-width: 100%; /* Make sure images don't overflow the post container */
+        border-radius: 5px; /* Optional: Add border-radius for rounded image corners */
+    }
+</style>

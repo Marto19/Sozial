@@ -30,3 +30,19 @@ function random_num($length){
 
     return $text;
 }
+
+// Function to resize the image
+function resizeImage($filename, $newWidth, $newHeight)
+{
+    list($width, $height) = getimagesize($filename);
+    $image_p = imagecreatetruecolor($newWidth, $newHeight);
+    $image = imagecreatefromjpeg($filename); // Change this based on the file type
+
+    // Resize the image
+    imagecopyresized($image_p, $image, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+
+    // Save the resized image
+    imagejpeg($image_p, $filename); // Change this based on the file type
+}
+?>
+
