@@ -86,22 +86,24 @@ $user_data = check_login($con);
 
         // Display posts
         while ($row = mysqli_fetch_assoc($result)) {
-          echo '<div class="post">';
-          echo '<h4>' . $row['user_name'] . '</h4>';
-          echo '<p>' . $row['caption'] . '</p>';
-          // Display the image if available
-          if (!empty($row['image_path'])) {
-              echo '<img src="' . $row['image_path'] . '" class="img-fluid" alt="Post Image">';
-          }
-          echo '<p class="text-muted">' . $row['created_at'] . '</p>';
-          echo '<p>Likes: ' . $row['likes_count'] . '</p>'; // Display the like count
-          // Add a form for liking a post
-          echo '<form method="post" action="like_post.php">';
-          echo '<input type="hidden" name="post_id" value="' . $row['id'] . '">';
-          echo '<button type="submit" class="btn btn-primary">Like</button>';
-          echo '</form>';
-          echo '</div>';
-      }
+            echo '<div class="post">';
+            echo '<h4>' . $row['user_name'] . '</h4>';
+            echo '<p>' . $row['caption'] . '</p>';
+            
+            // Display the image if available
+            if (!empty($row['image_path'])) {
+                echo '<img src="' . $row['image_path'] . '" class="img-fluid" alt="Post Image">';
+            }
+            
+            echo '<p class="text-muted">' . $row['created_at'] . '</p>';
+            echo '<p>Likes: <span id="likeCount_' . $row['id'] . '">' . $row['likes_count'] . '</span></p>'; // Display the like count with a unique identifier
+            // Add a form for liking a post
+            echo '<form method="post" action="like_post.php">';
+            echo '<input type="hidden" name="post_id" value="' . $row['id'] . '">';
+            echo '<button type="submit" class="btn btn-primary">Like</button>';
+            echo '</form>';
+            echo '</div>';
+        }
         ?>
     </div>
 </div>
