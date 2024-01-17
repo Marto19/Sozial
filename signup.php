@@ -68,7 +68,7 @@
             <a rel="noopener noreferrer" href="#">Forgot Password ?</a>
           </div>
         </div>
-        <button class="sign" type="submit" name="Login">Log in</button> <!-- Updated button name -->
+        <button class="sign" type="submit" name="Sign in">Sign in</button> <!-- Updated button name -->
       </form>
       <div class="social-message">
         <div class="line"></div>

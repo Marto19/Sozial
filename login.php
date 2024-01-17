@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <div class="second-text">Connect, Share, Thrive: Where Every Story Finds its Community!</div>
     <div class="form-container" action="index.php" method="post">
       <p class="title">Log in</p>
-      <form class="form" method="post" action="signup.php"> <!-- Updated action attribute -->
+      <form class="form" method="post" action="login.php"> <!-- Updated action attribute -->
         <div class="input-group">
           <label for="user_name">Username</label> <!-- Updated input name to match PHP -->
           <input type="text" name="user_name" id="user_name" placeholder="" required>

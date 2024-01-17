@@ -20,7 +20,9 @@ session_start();
 
     <h1>HELLOOOO WORLLD</h1>
     <br>
-    Hello, <?php echo $user_data['user_name'] ?>
     
   </body>
   </html>
+
+
+  Hello, <?php echo $user_data['user_name'] ?>
