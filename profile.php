@@ -166,12 +166,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_FILES["profile_picture"])) {
         }
 
         echo '<p class="text-muted">' . $post_row['created_at'] . '</p>';
+
+        // Add a form for deleting the post
+        echo '<form method="post" action="delete_post.php">';
+        echo '<input type="hidden" name="post_id" value="' . $post_row['id'] . '">';
+        echo '<button type="submit" class="btn btn-danger">Delete</button>';
+        echo '</form>';
+
         echo '</div>';
         echo '</div>';
         echo '</div>';
     }
     ?>
 </div>
+
 
     </div>
 
