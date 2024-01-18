@@ -33,6 +33,10 @@ $user_data = check_login($con);
         max-width: 100%; /* Make sure images don't overflow the post container */
         border-radius: 5px; /* Optional: Add border-radius for rounded image corners */
     }
+
+    .comment {
+        margin-top: 10px;
+    }
 </style>
 
 </head>
@@ -64,7 +68,6 @@ $user_data = check_login($con);
     </div>
 </nav>
 
-
 <!-- Page Content -->
 <div class="container">
     <div class="row">
@@ -75,38 +78,68 @@ $user_data = check_login($con);
 
     <!-- Feed Section -->
 <div class="row">
-    <div class="col-lg-8 mx-auto">
-        <?php
-        // Fetch posts from the database (assuming you have a 'posts' table)
-        $query = "SELECT posts.*, users.user_name 
-                  FROM posts 
-                  JOIN users ON posts.user_id = users.user_id 
-                  ORDER BY posts.created_at DESC";
-        $result = mysqli_query($con, $query);
+        <div class="col-lg-8 mx-auto">
+            <?php
+            $query = "SELECT posts.*, users.user_name 
+                      FROM posts 
+                      JOIN users ON posts.user_id = users.user_id 
+                      ORDER BY posts.created_at DESC";
+            $result = mysqli_query($con, $query);
 
-        // Display posts
-        while ($row = mysqli_fetch_assoc($result)) {
-            echo '<div class="post">';
-            echo '<h4>' . $row['user_name'] . '</h4>';
-            echo '<p>' . $row['caption'] . '</p>';
-            
-            // Display the image if available
-            if (!empty($row['image_path'])) {
-                echo '<img src="' . $row['image_path'] . '" class="img-fluid" alt="Post Image">';
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<div class="post">';
+                echo '<h4>' . $row['user_name'] . '</h4>';
+                echo '<p>' . $row['caption'] . '</p>';
+
+                if (!empty($row['image_path'])) {
+                    echo '<img src="' . $row['image_path'] . '" class="img-fluid" alt="Post Image">';
+                }
+
+                echo '<p class="text-muted">' . $row['created_at'] . '</p>';
+                echo '<p>Likes: <span id="likeCount_' . $row['id'] . '">' . $row['likes_count'] . '</span></p>';
+
+                // Display like button
+                echo '<form method="post" action="like_post.php">';
+                echo '<input type="hidden" name="post_id" value="' . $row['id'] . '">';
+                echo '<button type="submit" class="btn btn-primary">Like</button>';
+                echo '</form>';
+
+                // Display comments
+                $post_id = $row['id'];
+                $comments_query = "SELECT * FROM comments WHERE post_id = $post_id ORDER BY created_at DESC";
+                $comments_result = mysqli_query($con, $comments_query);
+
+                while ($comment = mysqli_fetch_assoc($comments_result)) {
+                    // Fetch the username associated with the comment
+                    $comment_user_id = $comment['user_id'];
+                    $username_query = "SELECT user_name FROM users WHERE user_id = '$comment_user_id'";
+                    $username_result = mysqli_query($con, $username_query);
+                    $username_row = mysqli_fetch_assoc($username_result);
+                    
+                    // Display the comment with the username
+                    echo '<div class="comment">';
+                    echo '<p><strong>' . $username_row['user_name'] . '</strong>: ' . $comment['comment_text'] . '</p>';
+                    echo '</div>';
+                }
+
+                // Add a form for adding comments with responsive sizing
+                echo '<form method="post" action="add_comment.php">';
+                echo '<div class="form-group row">';
+                echo '<div class="col-8">';
+                echo '<input type="hidden" name="post_id" value="' . $row['id'] . '">';
+                echo '<textarea class="form-control" name="comment_text" rows="2" placeholder="Add a comment"></textarea>';
+                echo '</div>';
+                echo '<div class="col-4">';
+                echo '<button type="submit" name="add_comment" class="btn btn-primary">Add Comment</button>';
+                echo '</div>';
+                echo '</div>';
+                echo '</form>';
+
+                echo '</div>';
             }
-            
-            echo '<p class="text-muted">' . $row['created_at'] . '</p>';
-            echo '<p>Likes: <span id="likeCount_' . $row['id'] . '">' . $row['likes_count'] . '</span></p>'; // Display the like count with a unique identifier
-            // Add a form for liking a post
-            echo '<form method="post" action="like_post.php">';
-            echo '<input type="hidden" name="post_id" value="' . $row['id'] . '">';
-            echo '<button type="submit" class="btn btn-primary">Like</button>';
-            echo '</form>';
-            echo '</div>';
-        }
-        ?>
+            ?>
+        </div>
     </div>
-</div>
 </div>
 
 <!-- Bootstrap JS and dependencies -->
