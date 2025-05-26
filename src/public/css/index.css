@@ -1,0 +1,290 @@
+.container{
+  display: flex;
+  /* --color1: rgb(0, 3, 49);
+  --color2: rgb(248, 255, 182);
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(45deg, var(--color2) 25%, transparent 25%, transparent 75%, var(--color2) 75%, var(--color2)), 
+                    linear-gradient(135deg, var(--color2) 25%, var(--color1) 25%, var(--color1) 75%, var(--color2) 75%, var(--color2));
+  background-size: 90px 90px;
+  background-position: 0 0, 135px 135px; */
+  
+  /* background-color: #e5e5f7;
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #e5e5f7 30px
+    ),
+    repeating-linear-gradient(#ffb5b58a, rgba(167, 139, 250)); */
+   
+}
+
+.form-container {
+    width: 320px;
+    border: solid;
+    border-color: #212122;
+    border-radius: 0.75rem;
+    background-color: rgb(230, 230, 231);
+    padding: 2rem;
+    color: rgb(21, 21, 21, 1);
+  }
+
+  /*rgba(17, 24, 39, 1) rgba(167, 139, 250, 1)*/
+  
+  .title {
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+  
+  .form {
+    margin-top: 1.5rem;
+  }
+  
+  .input-group {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  
+  .input-group label {
+    display: block;
+    color: #212122;
+    margin-bottom: 4px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid rgb(21, 21, 21);
+    outline: 0;
+    background-color: rgb(182, 182, 182);
+    padding: 0.75rem 1rem;
+    color: rgba(243, 244, 246, 1);
+  }
+  
+  .input-group input:focus {
+    border-color: rgba(167, 139, 250);
+  }
+  
+  .forgot {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgba(156, 163, 175,1);
+    margin: 8px 0 14px 0;
+  }
+  
+  .forgot a,.signup a {
+    color: rgba(21, 21, 21, 1);
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .forgot a:hover, .signup a:hover {
+    text-decoration: underline rgba(167, 139, 250, 1);
+  }
+  
+  .sign {
+    display: block;
+    width: 100%;
+    background-color: rgba(167, 139, 250, 1);
+    padding: 0.75rem;
+    text-align: center;
+    color: rgba(17, 24, 39, 1);
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 600;
+  }
+  
+  .social-message {
+    display: flex;
+    align-items: center;
+    padding-top: 1rem;
+  }
+  
+  .line {
+    height: 1px;
+    flex: 1 1 0%;
+    background-color: rgba(55, 65, 81, 1);
+  }
+  
+  .social-message .message {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: rgba(21, 21, 21, 1);
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    filter: invert(100%);
+  }
+  
+  .social-icons .icon {
+    border-radius: 0.125rem;
+    padding: 0.75rem;
+    border: none;
+    background-color: transparent;
+    margin-left: 8px;
+  }
+  
+  .social-icons .icon svg {
+    height: 1.25rem;
+    width: 1.25rem;
+    fill: #fff;
+  }
+  
+  .signup {
+    text-align: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: rgb(33, 34, 35);
+  }
+  
+
+.form-container{
+    width: 30%;
+    margin: 100px 150px;
+}
+
+.second-text{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  font-size: 50px;
+  width: 508px;
+  text-align: center;
+  margin: 150px auto;
+
+}
+
+
+/* Mobile devices */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+  /* CSS rules for mobile devices */
+  .container{
+    display: block;
+    padding: 0;
+  }
+
+  .form-container {
+    width: 95%;
+    border: solid;
+    border-color: #212122;
+    border-radius: 0.75rem;
+    background-color: rgb(230, 230, 231);
+    padding: 2rem;
+    color: rgb(21, 21, 21, 1);
+    margin: 10px;
+    height: 100%;
+  }
+
+  .second-text{
+    font-size: 22px;
+    width: 100%;
+    margin: 60px auto 40px;
+  }
+
+}
+
+/* iPads, Tablets */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  /* CSS rules for iPads, Tablets */
+  .container{
+    display: block;
+  }
+
+  .form-container {
+    width: 80%;
+    border: solid;
+    border-color: #212122;
+    border-radius: 0.75rem;
+    background-color: rgb(230, 230, 231);
+    padding: 2rem;
+    color: rgb(21, 21, 21, 1);
+    margin: 5px;
+    height: 100%;
+    margin-left: 50px;
+  }
+
+  .second-text{
+    font-size: 22px;
+    width: 100%;
+    margin: 60px auto 40px;
+    margin-right: 50px;
+  }
+}
+
+/* Small screens, laptops */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  /* CSS rules for small screens, laptops */
+  .container{
+    margin: 100px;
+  }
+
+  .form-container {
+    width: 80%;
+    border: solid;
+    border-color: #212122;
+    border-radius: 0.75rem;
+    background-color: rgb(230, 230, 231);
+    padding: 2rem;
+    color: rgb(21, 21, 21, 1);
+    margin: 5px;
+    height: 100%;
+    margin-left: 50px;
+  }
+
+  .second-text{
+    font-size: 35px;
+    width: 100%;
+  }
+
+}
+
+/* Desktops, large screens */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  /* CSS rules for desktops, large screens */
+  .container{
+    margin: 50px;
+  }
+
+  .form-container {
+    width: 80%;
+    border: solid;
+    border-color: #212122;
+    border-radius: 0.75rem;
+    background-color: rgb(230, 230, 231);
+    padding: 2rem;
+    color: rgb(21, 21, 21, 1);
+    margin: 5px;
+    height: 100%;
+    margin-left: 50px;
+  }
+
+  .second-text{
+    font-size: 43px;
+    width: 100%;
+  }
+}
+
+/* Extra large screens, TV */
+@media only screen and (min-width: 1201px) {
+  /* CSS rules for extra large screens, TV */
+  .container{
+    margin-top: 10vh;
+  }
+
+  .second-text{
+    font-size: 55px;
+    width: 60%;
+  }
+
+}
