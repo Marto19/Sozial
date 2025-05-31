@@ -1,0 +1,37 @@
+[31-May-2025 08:34:25 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Connection refused in /opt/lampp/htdocs/Sozial/connection.php:8
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/connection.php(8): mysqli_connect()
+#1 /opt/lampp/htdocs/Sozial/bootstrap.php(32): require_once('...')
+#2 /opt/lampp/htdocs/Sozial/src/public/index.php(8): require_once('...')
+#3 {main}
+  thrown in /opt/lampp/htdocs/Sozial/connection.php on line 8
+[31-May-2025 08:35:37 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Access denied for user 'sozial_user'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/connection.php:8
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/connection.php(8): mysqli_connect()
+#1 /opt/lampp/htdocs/Sozial/bootstrap.php(32): require_once('...')
+#2 /opt/lampp/htdocs/Sozial/src/public/index.php(8): require_once('...')
+#3 {main}
+  thrown in /opt/lampp/htdocs/Sozial/connection.php on line 8
+[31-May-2025 10:11:49 UTC] PHP Fatal error:  Uncaught Error: Class "Utils\Security" not found in /opt/lampp/htdocs/Sozial/bootstrap.php:35
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/public/index.php(8): require_once()
+#1 {main}
+  thrown in /opt/lampp/htdocs/Sozial/bootstrap.php on line 35
+[31-May-2025 10:27:49 UTC] PHP Warning:  Constant ROOT_DIR already defined in /opt/lampp/htdocs/Sozial/bootstrap.php on line 9
+[31-May-2025 10:27:49 UTC] Autoloader: Could not find class Controllers\AuthController. Searched paths: /opt/lampp/htdocs/Sozial/src/Controllers/AuthController.php, /opt/lampp/htdocs/Sozial/Controllers/AuthController.php, /opt/lampp/htdocs/Sozial/src/app/Controllers/AuthController.php
+[31-May-2025 10:27:49 UTC] PHP Fatal error:  Uncaught Error: Class "Controllers\AuthController" not found in /opt/lampp/htdocs/Sozial/src/public/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/public/index.php on line 11
+[31-May-2025 10:29:36 UTC] PHP Warning:  Constant ROOT_DIR already defined in /opt/lampp/htdocs/Sozial/bootstrap.php on line 9
+[31-May-2025 10:29:36 UTC] Autoloader: Could not find class Controllers\AuthController. Searched paths: /opt/lampp/htdocs/Sozial/src/Controllers/AuthController.php, /opt/lampp/htdocs/Sozial/Controllers/AuthController.php, /opt/lampp/htdocs/Sozial/src/app/Controllers/AuthController.php
+[31-May-2025 10:29:36 UTC] PHP Fatal error:  Uncaught Error: Class "Controllers\AuthController" not found in /opt/lampp/htdocs/Sozial/src/public/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/public/index.php on line 11
+[31-May-2025 10:29:39 UTC] PHP Warning:  Constant ROOT_DIR already defined in /opt/lampp/htdocs/Sozial/bootstrap.php on line 9
+[31-May-2025 10:29:39 UTC] Autoloader: Could not find class Controllers\AuthController. Searched paths: /opt/lampp/htdocs/Sozial/src/Controllers/AuthController.php, /opt/lampp/htdocs/Sozial/Controllers/AuthController.php, /opt/lampp/htdocs/Sozial/src/app/Controllers/AuthController.php
+[31-May-2025 10:29:39 UTC] PHP Fatal error:  Uncaught Error: Class "Controllers\AuthController" not found in /opt/lampp/htdocs/Sozial/src/public/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/public/index.php on line 11

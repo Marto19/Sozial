@@ -7,9 +7,8 @@ ini_set('log_errors', 1);
 define('ROOT_DIR', dirname(__DIR__, 2));
 require_once ROOT_DIR . '/bootstrap.php';
 
-// Enable error display
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// Initialize controllers
+$authController = new \Controllers\AuthController();
 
 // Map URLs to controller actions
 $route = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -23,47 +22,24 @@ $route = str_replace('.php', '', $route);
 error_log("Requested URI: " . $_SERVER['REQUEST_URI']);
 error_log("Mapped route: " . $route);
 
-// Initialize controllers
-$authController = new Controllers\AuthController();
-$postController = new Controllers\PostController();
-$commentController = new Controllers\CommentController();
+// Debug: Check if files exist
+$controllerPath = ROOT_DIR . '/src/Controllers/AuthController.php';
+error_log("Looking for controller at: " . $controllerPath);
+error_log("File exists: " . (file_exists($controllerPath) ? 'YES' : 'NO'));
 
-// Route handling while maintaining existing URLs
+// Debug: Test autoloading
+if (class_exists('Controllers\AuthController')) {
+    error_log("AuthController class loaded successfully");
+} else {
+    error_log("AuthController class NOT loaded");
+}
+
+// Simple router
 switch ($route) {
     case '/login':
         $authController->login();
         break;
-    case '/signup':
-        $authController->signup();
-        break;
-    case '/logout':
-        $authController->logout();
-        break;
-    case '/profile':
-        $postController->userPosts();
-        break;
-    case '/submit_post':
-        $postController->create();
-        break;
-    case '/like_post':
-        $postController->like();
-        break;
-    case '/add_comment':
-        $commentController->add();
-        break;
-    case '/delete_comment':
-        $commentController->delete();
-        break;
-    case '/delete_post':
-        $postController->delete();
-        break;
-    case '/':
-    case '/index':
-        $postController->index();
-        break;    default:
-        // 404 handling
-        header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
-        include(__DIR__ . '/../views/errors/404.php');
-        exit;
+    default:
+        echo "404 Not Found";
         break;
 }

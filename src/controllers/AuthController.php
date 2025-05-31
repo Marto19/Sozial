@@ -1,4 +1,6 @@
 <?php
+// src/Controllers/AuthController.php
+
 namespace Controllers;
 
 use Utils\Auth;
@@ -8,96 +10,82 @@ use Models\User;
 class AuthController {
     private $auth;
     private $user;
-
+    
     public function __construct() {
-        $this->auth = Auth::getInstance();
+        $this->auth = new Auth();
         $this->user = new User();
-    }    public function login() {
-        try {
-            if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                $user_name = Security::sanitizeInput($_POST['user_name']);
-                $password = $_POST['password'];
-
-                if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
-                $user = $this->user->findByUsername($user_name);                if ($user && Security::verifyPassword($password, $user['password'])) {
-                    $_SESSION['user_id'] = $user['user_id'];
-                    header("Location: /");
-                    exit;
-                } else {
-                    echo '<script>alert("Wrong username or password!");</script>';
-                }
-            } else {                echo '<script>alert("Please enter valid information!");</script>';
-            }
-        }        } catch (\Exception $e) {
-            error_log("Login error: " . $e->getMessage());
-            error_log("Stack trace: " . $e->getTraceAsString());
-            echo '<script>alert("An error occurred during login. Please try again.");</script>';
+    }
+    
+    public function login() {
+        error_log("Login method called");
+        
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // Handle login POST request
+            $this->handleLoginPost();
+            return;
         }
         
-        try {
-            $loginPath = __DIR__ . '/../views/auth/login.php';
-            error_log("Attempting to load login view from: " . $loginPath);
-            if (!file_exists($loginPath)) {
-                throw new \Exception("Login view file not found at: " . $loginPath);
-            }
-            include($loginPath);
-        } catch (\Exception $e) {
-            error_log("View error: " . $e->getMessage());
-            echo "Error loading login page. Please try again later.";
-        }
+        // Show login form
+        $this->showLoginForm();
     }
-
-    public function signup() {
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            $user_name = Security::sanitizeInput($_POST['user_name']);
-            $password = $_POST['password'];
-
-            if (!empty($user_name) && !empty($password) && !is_numeric($user_name)) {
-                // Check if user exists
-                if ($this->user->findByUsername($user_name)) {
-                    echo '<script>alert("User with this username already exists!");</script>';
-                } else {
-                    $userData = [
-                        'user_id' => random_num(20), // Maintaining existing function
-                        'user_name' => $user_name,
-                        'password' => $password
-                    ];
-
-                    if ($this->user->createUser($userData)) {
-                        header("Location: login.php");
-                        exit;
-                    }
-                }
-            } else {
-                echo "Please enter valid information!";
-            }
-        }
-          // Include the signup view
-        include(__DIR__ . '/../views/auth/signup.php');
-    }
-
-    public function logout() {
-        if(isset($_SESSION['user_id'])) {
-            unset($_SESSION['user_id']);
-        }
+    
+    private function handleLoginPost() {
+        // Add your login logic here
+        $username = $_POST['username'] ?? '';
+        $password = $_POST['password'] ?? '';
         
-        session_destroy();
-        header("Location: login.php");
-        exit;
+        // Validate and authenticate user
+        // Example implementation:
+        if ($this->auth->authenticate($username, $password)) {
+            // Redirect to dashboard or home page
+            header('Location: /dashboard');
+            exit;
+        } else {
+            $error = 'Invalid username or password';
+            $this->showLoginForm($error);
+        }
+    }
+    
+    private function showLoginForm($error = null) {
+        // Check if view file exists
+        $viewFile = VIEW_DIR . '/auth/login.php';
+        if (file_exists($viewFile)) {
+            include $viewFile;
+        } else {
+            error_log("View file not found: " . $viewFile);
+            echo "Login form template not found.";
+        }
     }
 }
 
 // Keep the existing helper function to maintain compatibility
 function random_num($length) {
     $text = "";
-    if($length < 5){
+    if ($length < 5) {
         $length = 5;
     }
-
     $len = rand(4, $length);
-    for($i = 0; $i < $len; ++$i){
+    for ($i = 0; $i < $len; ++$i) {
         $text .= rand(0, 9);
     }
-
     return $text;
 }
+?>
+
+<?php
+
+namespace Utils;
+
+class Auth {
+    public function authenticate($username, $password) {
+        // Example authentication logic, replace with your own
+        // For demonstration, let's assume a hardcoded user
+        if ($username === 'admin' && $password === 'password') {
+            return true;
+        }
+        // You can implement real authentication with database here
+        return false;
+    }
+}
+
+?>

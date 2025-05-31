@@ -3,7 +3,9 @@ namespace Utils;
 
 class Database {
     private static $instance = null;
-    private $connection;    private function __construct() {
+    private $connection;
+    
+    private function __construct() {
         try {
             $config = require __DIR__ . '/../config/database.php';
             if (!isset($config['database'])) {
@@ -15,19 +17,29 @@ class Database {
                 throw new \Exception("Incomplete database configuration");
             }
 
+            $port = $db['port'] ?? 3306;
+            $dsn = "mysql:host={$db['host']};port={$port};dbname={$db['dbname']};charset={$db['charset']}";
+            
+            $options = [
+                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
+                \PDO::ATTR_EMULATE_PREPARES => false,
+                \PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT => false,
+                \PDO::MYSQL_ATTR_SSL_CA => false
+            ];
+
             try {
-            $this->connection = new \PDO(
-                "mysql:host={$db['host']};dbname={$db['dbname']};charset={$db['charset']}",
-                $db['username'],
-                $db['password'],
-                [
-                    \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
-                    \PDO::ATTR_DEFAULT_FETCH_MODE => \PDO::FETCH_ASSOC,
-                    \PDO::ATTR_EMULATE_PREPARES => false
-                ]
-            );
-        } catch (\PDOException $e) {
-            throw new \Exception("Connection failed: " . $e->getMessage());
+                $this->connection = new \PDO($dsn, $db['username'], $db['password'], $options);
+                // Test the connection
+                $this->connection->query("SELECT 1");
+            } catch (\PDOException $e) {
+                // If SSL is causing issues, try without SSL options
+                unset($options[\PDO::MYSQL_ATTR_SSL_VERIFY_SERVER_CERT]);
+                unset($options[\PDO::MYSQL_ATTR_SSL_CA]);
+                $this->connection = new \PDO($dsn, $db['username'], $db['password'], $options);
+            }
+        } catch (\Exception $e) {
+            throw new \Exception("Database Error: " . $e->getMessage());
         }
     }
 
@@ -49,5 +61,5 @@ class Database {
     }
 
     private function __clone() {}
-    private function __wakeup() {}
+    public function __wakeup() {}
 }

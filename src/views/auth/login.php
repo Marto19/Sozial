@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Login - PostJunkyard';
+$pageTitle = 'Login - Sozial';
 $activePage = 'login';
 ?>
 

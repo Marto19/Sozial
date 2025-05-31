@@ -12,15 +12,12 @@ if (session_status() === PHP_SESSION_NONE) {
 define('BASE_PATH', dirname(__DIR__));
 define('UPLOAD_DIR', BASE_PATH . '/public/uploads/');
 define('PROFILE_PICS_DIR', UPLOAD_DIR . 'profile_pics/');
+define('VIEW_DIR', __DIR__ . '/views');
 
-// Autoloader for our classes
-spl_autoload_register(function ($class) {
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    $file = __DIR__ . '/' . $class . '.php';
-    if (file_exists($file)) {
-        require_once $file;
-    }
-});
+// Use Composer's autoloader
+if (!class_exists('Composer\Autoload\ClassLoader')) {
+    require_once dirname(__DIR__) . '/vendor/autoload.php';
+}
 
 // Initialize database connection for backward compatibility
 require_once BASE_PATH . '/connection.php';

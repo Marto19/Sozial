@@ -1,0 +1,288 @@
+[31-May-2025 10:13:19 UTC] PHP Warning:  Constant ROOT_DIR already defined in /opt/lampp/htdocs/Sozial/bootstrap.php on line 13
+[31-May-2025 10:13:19 UTC] PHP Warning:  require_once(/opt/lampp/htdocs/Sozial/src/public/../../vendor/autoload.php): Failed to open stream: No such file or directory in /opt/lampp/htdocs/Sozial/src/public/index.php on line 9
+[31-May-2025 10:13:19 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/opt/lampp/htdocs/Sozial/src/public/../../vendor/autoload.php' (include_path='.:/usr/share/php') in /opt/lampp/htdocs/Sozial/src/public/index.php:9
+Stack trace:
+#0 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/public/index.php on line 9
+[31-May-2025 10:20:12 UTC] Requested URI: /login
+[31-May-2025 10:20:12 UTC] Mapped route: /login
+[31-May-2025 10:20:12 UTC] PHP Warning:  Undefined variable $authController in /opt/lampp/htdocs/Sozial/src/public/index.php on line 29
+[31-May-2025 10:20:12 UTC] PHP Fatal error:  Uncaught Error: Call to a member function login() on null in /opt/lampp/htdocs/Sozial/src/public/index.php:29
+Stack trace:
+#0 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/public/index.php on line 29
+[31-May-2025 10:22:04 UTC] PHP Fatal error:  Uncaught Error: Class "Controllers\AuthController" not found in /opt/lampp/htdocs/Sozial/src/public/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/public/index.php on line 11
+[31-May-2025 10:25:08 UTC] Autoloader registered. Base directory: /opt/lampp/htdocs/Sozial/src/
+[31-May-2025 10:25:08 UTC] PHP Fatal error:  Uncaught Error: Class "Controllers\AuthController" not found in /opt/lampp/htdocs/Sozial/src/public/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/public/index.php on line 11
+[31-May-2025 10:25:10 UTC] Autoloader registered. Base directory: /opt/lampp/htdocs/Sozial/src/
+[31-May-2025 10:25:10 UTC] PHP Fatal error:  Uncaught Error: Class "Controllers\AuthController" not found in /opt/lampp/htdocs/Sozial/src/public/index.php:11
+Stack trace:
+#0 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/public/index.php on line 11
+[31-May-2025 10:33:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method Utils\Security::secureHeaders() in /opt/lampp/htdocs/Sozial/src/bootstrap.php:26
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/index.php(7): require_once()
+#1 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/bootstrap.php on line 26
+[31-May-2025 10:34:26 UTC] PHP Parse error:  syntax error, unexpected token "public" in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 34
+[31-May-2025 10:35:27 UTC] PHP Warning:  The magic method Utils\Database::__wakeup() must have public visibility in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 53
+[31-May-2025 10:35:27 UTC] Error: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'sozial_user'@'localhost' (using password: YES)
+[31-May-2025 10:36:09 UTC] Error: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'sozial_user'@'localhost' (using password: YES)
+[31-May-2025 10:39:35 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:34
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(40): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 34
+[31-May-2025 10:41:07 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:41:07 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:41:08 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:41:08 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:41:08 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:41:08 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:41:08 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:41:09 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:37 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:37 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:38 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:38 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:38 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:38 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:39 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:39 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:39 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:39 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:39 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:44:40 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:46:12 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:46:12 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:46:12 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:46:12 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:46:13 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:46:15 UTC] PHP Fatal error:  Uncaught Exception: Database Error: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES) in /opt/lampp/htdocs/Sozial/src/utils/Database.php:42
+Stack trace:
+#0 /opt/lampp/htdocs/Sozial/src/utils/Database.php(48): Utils\Database->__construct()
+#1 /opt/lampp/htdocs/Sozial/connection.php(11): Utils\Database::getInstance()
+#2 /opt/lampp/htdocs/Sozial/connection.php(18): get_db_connection()
+#3 /opt/lampp/htdocs/Sozial/src/bootstrap.php(23): require_once('...')
+#4 /opt/lampp/htdocs/Sozial/index.php(7): require_once('...')
+#5 {main}
+  thrown in /opt/lampp/htdocs/Sozial/src/utils/Database.php on line 42
+[31-May-2025 10:47:18 UTC] Routing request: /login
+[31-May-2025 10:47:18 UTC] Login method called
+[31-May-2025 10:47:32 UTC] Routing request: /login
+[31-May-2025 10:47:32 UTC] Login method called
+[31-May-2025 10:47:44 UTC] Routing request: /register
+[31-May-2025 10:48:06 UTC] Routing request: /login
+[31-May-2025 10:48:06 UTC] Login method called
+[31-May-2025 10:48:14 UTC] Routing request: /login
+[31-May-2025 10:48:14 UTC] Login method called

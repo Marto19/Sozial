@@ -1,38 +1,31 @@
 <?php
-// Set up error reporting
+// bootstrap.php - Place this in your project root directory
+
+// Error reporting for development
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-// Start session if not already started
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
+// Define project paths if not already defined
+if (!defined('ROOT_DIR')) {
+    define('ROOT_DIR', __DIR__);
+}
+if (!defined('SRC_DIR')) {
+    define('SRC_DIR', ROOT_DIR . '/src');
+}
+if (!defined('VIEW_DIR')) {
+    define('VIEW_DIR', SRC_DIR . '/views');
+}
+if (!defined('CONFIG_DIR')) {
+    define('CONFIG_DIR', SRC_DIR . '/config');
 }
 
-// Define constants
-define('BASE_PATH', __DIR__);
-define('UPLOAD_DIR', __DIR__ . '/src/public/uploads/');
-define('PROFILE_PICS_DIR', UPLOAD_DIR . 'profile_pics/');
+// Use Composer's autoloader
+require_once __DIR__ . '/vendor/autoload.php';
 
-// Autoloader
-spl_autoload_register(function ($class) {
-    $class = str_replace('\\', DIRECTORY_SEPARATOR, $class);
-    $file = __DIR__ . '/src/' . $class . '.php';
-    if (file_exists($file)) {
-        require_once $file;
-    } else {
-        // Try the src directory without namespace
-        $altFile = __DIR__ . '/src/' . str_replace('\\', '/', $class) . '.php';
-        if (file_exists($altFile)) {
-            require_once $altFile;
-        }
-    }
-});
+// Include any additional configuration files
+if (file_exists(CONFIG_DIR . '/database.php')) {
+    require_once CONFIG_DIR . '/database.php';
+}
 
-// Initialize database connection for backward compatibility
-require_once __DIR__ . '/connection.php';
-
-// Initialize security headers
-Utils\Security::secureHeaders();
-
-// Keep the existing functions.php for backward compatibility
-require_once __DIR__ . '/functions.php';
+// You can add other initialization code here
+?>
